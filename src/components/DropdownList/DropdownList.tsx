@@ -6,10 +6,11 @@ import * as STC from './DropdownList.styled';
 import { DropdownItem } from '../DropdownItem/DropdownItem';
 import { selectSelectedID } from '../../redux/selectors';
 
-export const DropdownList = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const variants = useSelector(selectVariants);
-  const selectedID = useSelector(selectSelectedID);
+
+export const DropdownList: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const variants: any = useSelector(selectVariants);
+  const selectedID:any = useSelector(selectSelectedID);
 
   const selectedText = selectedID.join('-');
 
@@ -17,7 +18,7 @@ export const DropdownList = () => {
     <STC.DropdownContainer isOpen={isOpen}>
       <STC.Wrap>
         <STC.SelectedText>
-          {!!selectedText ? `Варіант ${selectedText}` : 'Вибрати значення'}
+          {selectedText ? `Варіант ${selectedText}` : 'Вибрати значення'}
         </STC.SelectedText>
         <STC.Svg
           className="dropdown-toggle"
@@ -34,7 +35,7 @@ export const DropdownList = () => {
       </STC.Wrap>
 
       {isOpen &&
-        variants.map(variant => (
+        variants.map((variant:any) => (
           <DropdownItem
             key={variant.id}
             variant={variant}
@@ -43,4 +44,4 @@ export const DropdownList = () => {
         ))}
     </STC.DropdownContainer>
   );
-};
+}

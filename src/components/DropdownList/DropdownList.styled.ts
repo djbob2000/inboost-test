@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
+interface DropdownContainerProps {
+  isOpen: boolean;
+}
+
 export const Svg = styled.svg`
   width: 24px;
   height: 24px;
 `;
-export const DropdownContainer = styled.div`
+export const DropdownContainer = styled.div<DropdownContainerProps>`
   min-width: 233px;
   position: absolute;
 

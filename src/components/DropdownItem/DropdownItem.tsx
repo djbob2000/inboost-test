@@ -4,7 +4,16 @@ import icon from '../../assets/icons/sprite.svg';
 import { useDispatch } from 'react-redux';
 import { toggleSelected } from '../../redux/variants/variants.slice';
 
-export const DropdownItem = ({ variant, selectedID }) => {
+interface DropdownItemProps {
+  variant: {
+    id: number;
+    name: string;
+  }
+  selectedID: number[];
+}
+
+
+export const DropdownItem: React.FC<DropdownItemProps> = ({ variant, selectedID }) => {
   const dispatch = useDispatch();
 
   const handleVariantSelect = () => {
@@ -13,7 +22,7 @@ export const DropdownItem = ({ variant, selectedID }) => {
 
   return (
     <>
-      <STC.Wrap onClick={() => handleVariantSelect(variant)}>
+      <STC.Wrap onClick={() => handleVariantSelect()}>
         <STC.Svg>
           {!selectedID.includes(variant.id) ? (
             <use href={`${icon}#checkbox`} />

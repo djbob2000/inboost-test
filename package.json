@@ -1,13 +1,19 @@
 {
-  "name": "delivery-app",
+  "name": "inboost-test",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://djbob2000.github.io/inboost-test/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.36",
+    "@types/react": "^18.2.13",
+    "@types/react-dom": "^18.2.6",
+    "eslint": "^8.43.0",
+    "eslint-plugin-react": "^7.25.3",
     "react": "^18.2.0",
     "react-redux": "^8.0.5",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "redux-persist": "^6.0.0",
     "styled-components": "^5.3.11"
   },
@@ -15,8 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint:js": "eslint src/**/*.{js,jsx}"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -37,7 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/styled-components": "^5.1.26"
   }
 }
