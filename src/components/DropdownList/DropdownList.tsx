@@ -12,13 +12,8 @@ interface Variant {
 
 export const DropdownList: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const variants: Variant[] = useSelector(selectVariants).map((variant: string) => {
-    const parsedVariant: Variant = JSON.parse(variant);
-    return {
-      id: parsedVariant.id,
-      name: parsedVariant.name,
-    };
-  });
+  const variantStrings: string[] = useSelector(selectVariants);
+  const variants: Variant[] = variantStrings.map((variantString: string) => JSON.parse(variantString));
   const selectedID: number[] = [useSelector(selectSelectedID)];
 
   const selectedText = selectedID.join('-');
