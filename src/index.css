@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("../src/assets/fonts/IBMPlexSans.woff2") format("woff2"),
+    url("../src/assets/fonts/IBMPlexSans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  margin: 0 auto;
+
+  @media screen and (min-width: 375px) {
+    width: 375px;
+    padding: 0 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+    padding: 0 24px;
+  }
+}
