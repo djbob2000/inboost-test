@@ -2,20 +2,13 @@ import React from "react";
 import * as STC from "./DropdownItem.styled";
 import icon from "../../assets/icons/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { addSelected } from "../../redux/variants/variants.slice";
-import { selectSelectedID } from "../../redux/selectors";
+import { toggleSelected } from "../../redux/variants/variants.slice";
 
-export const DropdownItem = ({ variant }) => {
-  const selectedID = useSelector(selectSelectedID);
-  console.log(
-    "🚀 ~ file: DropdownItem.jsx:10 ~ DropdownItem ~ selectedID:",
-    selectedID
-  );
-
+export const DropdownItem = ({ variant, selectedID }) => {
   const dispatch = useDispatch();
+
   const handleVariantSelect = () => {
-    console.log("Variant klick");
-    dispatch(addSelected(variant.id));
+    dispatch(toggleSelected(variant.id));
   };
 
   return (

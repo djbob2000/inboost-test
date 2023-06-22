@@ -7,13 +7,17 @@ const variantsSlice = createSlice({
   name: "variants",
   initialState,
   reducers: {
-    addSelected: (state, { payload }) => {
+    toggleSelected: (state, { payload }) => {
       console.log("🚀 ~ file: variants.slice.js:11 ~ payload:", payload);
-      state.selectedID.push(payload);
+      state.selectedID.includes(payload)
+        ? (state.selectedID = state.selectedID.filter(
+            (item) => item !== payload
+          ))
+        : state.selectedID.push(payload);
     },
   },
 });
-export const { addSelected } = variantsSlice.actions;
+export const { toggleSelected } = variantsSlice.actions;
 
 const persistConfig = {
   key: "selectedID",

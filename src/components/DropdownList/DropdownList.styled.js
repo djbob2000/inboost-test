@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Svg = styled.svg`
   width: 24px;
@@ -11,7 +11,7 @@ export const DropdownContainer = styled.div`
   border-radius: 4px;
   border: 0.658px solid var(--green-400, #479f76);
   border: ${({ isOpen }) =>
-    isOpen ? "1px solid #EAF2FF" : "0.658px solid var(--green-400, #479f76)"};
+    isOpen ? '1px solid #EAF2FF' : '0.658px solid var(--green-400, #479f76)'};
   background: var(--gray-white, #fff);
 `;
 

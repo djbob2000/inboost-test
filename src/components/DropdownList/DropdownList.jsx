@@ -1,27 +1,28 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectVariants } from "../../redux/selectors";
-import icon from "../../assets/icons/sprite.svg";
-import * as STC from "./DropdownList.styled";
-import { DropdownItem } from "../DropdownItem/DropdownItem";
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectVariants } from '../../redux/selectors';
+import icon from '../../assets/icons/sprite.svg';
+import * as STC from './DropdownList.styled';
+import { DropdownItem } from '../DropdownItem/DropdownItem';
+import { selectSelectedID } from '../../redux/selectors';
 
 export const DropdownList = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedText, setSelectedText] = useState("Select variants");
   const variants = useSelector(selectVariants);
+  const selectedID = useSelector(selectSelectedID);
 
-  const handleVariantSelect = () => {
-    console.log("DropdownList onChange");
-  };
+  const selectedText = selectedID.join('-');
 
   return (
     <STC.DropdownContainer isOpen={isOpen}>
       <STC.Wrap>
-        <STC.SelectedText>{selectedText}</STC.SelectedText>
+        <STC.SelectedText>
+          {!!selectedText ? `Варіант ${selectedText}` : 'Вибрати значення'}
+        </STC.SelectedText>
         <STC.Svg
           className="dropdown-toggle"
           onClick={() => {
-            setIsOpen((prev) => !prev);
+            setIsOpen(prev => !prev);
           }}
         >
           {isOpen ? (
@@ -33,8 +34,12 @@ export const DropdownList = () => {
       </STC.Wrap>
 
       {isOpen &&
-        variants.map((variant) => (
-          <DropdownItem key={variant.id} variant={variant} />
+        variants.map(variant => (
+          <DropdownItem
+            key={variant.id}
+            variant={variant}
+            selectedID={selectedID}
+          />
         ))}
     </STC.DropdownContainer>
   );
