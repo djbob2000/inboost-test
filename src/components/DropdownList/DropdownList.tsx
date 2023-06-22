@@ -9,10 +9,11 @@ import { selectSelectedID } from '../../redux/selectors';
 
 export const DropdownList: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const variants: any = useSelector(selectVariants);
-  const selectedID:any = useSelector(selectSelectedID);
+  const variants: string[] = useSelector(selectVariants);
+  const selectedID = useSelector(selectSelectedID);
 
   const selectedText = selectedID.join('-');
+
 
   return (
     <STC.DropdownContainer isOpen={isOpen}>
@@ -35,12 +36,14 @@ export const DropdownList: React.FC = () => {
       </STC.Wrap>
 
       {isOpen &&
-        variants.map((variant:any) => (
+        variants.map((variant ) => (
+
           <DropdownItem
             key={variant.id}
             variant={variant}
             selectedID={selectedID}
-          />
+            />
+   
         ))}
     </STC.DropdownContainer>
   );

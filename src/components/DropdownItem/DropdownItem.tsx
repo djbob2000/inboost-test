@@ -8,8 +8,8 @@ interface DropdownItemProps {
   variant: {
     id: number;
     name: string;
-  }
-  selectedID: number[];
+  },
+  selectedID: number[]
 }
 
 
