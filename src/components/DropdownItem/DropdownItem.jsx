@@ -1,8 +1,8 @@
-import React from "react";
-import * as STC from "./DropdownItem.styled";
-import icon from "../../assets/icons/sprite.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleSelected } from "../../redux/variants/variants.slice";
+import React from 'react';
+import * as STC from './DropdownItem.styled';
+import icon from '../../assets/icons/sprite.svg';
+import { useDispatch } from 'react-redux';
+import { toggleSelected } from '../../redux/variants/variants.slice';
 
 export const DropdownItem = ({ variant, selectedID }) => {
   const dispatch = useDispatch();
