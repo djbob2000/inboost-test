@@ -1,0 +1,22 @@
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+
+<symbol id="arrow-down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.41 8.295L12 12.875L16.59 8.295L18 9.705L12 15.705L6 9.705L7.41 8.295Z" fill="#2C7DFA"/>
+</symbol>
+
+<symbol id="arrow-up" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.41 15.705L12 11.125L16.59 15.705L18 14.295L12 8.295L6 14.295L7.41 15.705Z" fill="#2C7DFA"/>
+</symbol>
+
+<symbol id="checkbox" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="15" height="15" rx="1.5" fill="white" stroke="#95BEFC"/>
+</symbol>
+
+<symbol id="checkboxSelected" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="16" height="16" rx="2" fill="#95BEFC"/>
+<path d="M12 5L6.5 10.5L4 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+</defs>
+</svg>
