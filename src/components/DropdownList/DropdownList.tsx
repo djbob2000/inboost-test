@@ -5,16 +5,13 @@ import icon from '../../assets/icons/sprite.svg';
 import * as STC from './DropdownList.styled';
 import { DropdownItem } from '../DropdownItem/DropdownItem';
 
-interface Variant {
-  id: number;
-  name: string;
-}
+
 
 export const DropdownList: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const variantStrings: string[] = useSelector(selectVariants);
-  const variants: Variant[] = variantStrings.map((variantString: string) => JSON.parse(variantString));
-  const selectedID: number[] = [useSelector(selectSelectedID)];
+  const variants = useSelector(selectVariants);
+  const selectedID: number[] = useSelector(selectSelectedID);
+
 
   const selectedText = selectedID.join('-');
 
@@ -39,13 +36,14 @@ export const DropdownList: React.FC = () => {
       </STC.Wrap>
 
       {isOpen &&
-        variants.map(variant => (
-          <DropdownItem
-            key={variant.id}
-            variant={variant}
-            selectedID={selectedID}
-          />
-        ))}
+  variants.map(variant => (
+    <DropdownItem
+      key={variant.id}
+      variant={variant}
+      selectedID={selectedID}
+    />
+  ))}
+
     </STC.DropdownContainer>
   );
 };

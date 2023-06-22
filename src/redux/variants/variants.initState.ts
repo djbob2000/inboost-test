@@ -1,7 +1,6 @@
 export interface State {
   variants: { id: number, name: string }[];
-  isLoading: boolean;
-  error: Error | null;
+
   selectedID: number[];
 }
 
@@ -14,7 +13,6 @@ export const initialState: State = {
     { id: 5, name: 'Варіант 5' },
     { id: 6, name: 'Варіант 6' },
   ],
-  isLoading: false,
-  error: null,
+
   selectedID: [],
 };
